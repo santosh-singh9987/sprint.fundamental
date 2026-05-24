@@ -2,12 +2,10 @@ package com.example.dashboard.start;
 
 import com.example.dashboard.start.notification.NotificationServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -42,9 +40,9 @@ public class StartApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 //        notificationInterfaceService notificationService = new EmailNotificationInterface();
 //        notificationServiceInterfaceObj.sendNotification();
-        for (var NotificationServiceInterface : notificationServiceMap.entrySet()) {
-            System.out.println(NotificationServiceInterface.getKey());
-            System.out.println(NotificationServiceInterface.getValue().sendNotification());
-        }
+//        for (var NotificationServiceInterface : notificationServiceMap.entrySet()) {
+//            System.out.println(NotificationServiceInterface.getKey());
+//            System.out.println(NotificationServiceInterface.getValue().sendNotification());
+//        }
     }
 }
