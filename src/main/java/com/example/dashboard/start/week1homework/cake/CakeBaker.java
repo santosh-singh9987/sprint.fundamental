@@ -1,14 +1,11 @@
 package com.example.dashboard.start.week1homework.cake;
 
-import com.example.dashboard.start.StartApplication;
 import com.example.dashboard.start.week1homework.cake.services.FrostingService;
 import com.example.dashboard.start.week1homework.cake.services.SyrupService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Component;
 
 @SpringBootApplication
 public class CakeBaker  implements CommandLineRunner {
@@ -35,9 +32,8 @@ public class CakeBaker  implements CommandLineRunner {
     }
 
     public void bakeCake() {
-        System.out.println("Baking Cake");
-        System.out.println("syrup: " + syrup.getSyrupType());
-        System.out.println("frosting: " + frosting.getFrostingType());
+//        System.out.println("Baking Cake");
+//        System.out.println("syrup: " + syrup.getSyrupType());
+//        System.out.println("frosting: " + frosting.getFrostingType());
     }
-
 }
