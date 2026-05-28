@@ -12,6 +12,10 @@ public class GlobalResponseHandler implements ResponseBodyAdvice {
 
     @Override
     public boolean supports(MethodParameter returnType, Class converterType) {
+        String className = returnType.getContainingClass().getSimpleName();
+        if ("HealthCheckController".equals(className)) {
+            return false;
+        }
         return true;
     }
 

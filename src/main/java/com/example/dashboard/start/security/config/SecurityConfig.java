@@ -23,7 +23,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-
+        System.out.println("===== CUSTOM SECURITY CONFIG LOADED 4 ====");
         http
                 // Disable CSRF for stateless APIs
                 .csrf(csrf -> csrf.disable())
@@ -34,8 +34,8 @@ public class SecurityConfig {
                 // Authorization rules
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
+                                "/",
                                 "/swagger-ui/**",
-                                "/v3/api-docs/**",
                                 "/v3/api-docs/**",
                                 "/login.html",
                                 "/auth/**",

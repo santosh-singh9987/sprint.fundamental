@@ -1,16 +1,14 @@
 version: 0.2
 
 phases:
-  pre_build:
-    commands:
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 339494983607.dkr.ecr.us-east-1.amazonaws.com
+  install:
+    runtime-versions:
+      java: corretto21
 
   build:
     commands:
       - mvn clean package -DskipTests
-      - docker build -t $ImageName .
-      - docker tag $ImageName:latest 339494983607.dkr.ecr.us-east-1.amazonaws.com/$ImageName:latest
 
-  post_build:
-    commands:
-      - docker push 339494983607.dkr.ecr.us-east-1.amazonaws.com/$ImageName:latest
+artifacts:
+  files:
+    - target/*.jar
