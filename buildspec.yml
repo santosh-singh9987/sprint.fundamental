@@ -9,6 +9,16 @@ phases:
     commands:
       - mvn clean package -DskipTests
 
+  post_build:
+    commands:
+      - echo "Build and packaging completed"
+      - ls -lah target/
+
 artifacts:
   files:
-    - target/*.jar
+    - target/start-0.0.1-SNAPSHOT.jar
+  discard-paths: yes
+
+cache:
+  paths:
+    - '/root/.m2/**/*'

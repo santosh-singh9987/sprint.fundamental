@@ -23,7 +23,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        System.out.println("===== CUSTOM SECURITY CONFIG LOADED 4 ====");
+        System.out.println("===== CUSTOM SECURITY CONFIG LOADED 6 ====");
         http
                 // Disable CSRF for stateless APIs
                 .csrf(csrf -> csrf.disable())
