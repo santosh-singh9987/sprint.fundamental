@@ -8,7 +8,6 @@ import com.example.dashboard.start.service.auth.AuthService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,9 +17,6 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
 
     private final AuthService authService;
-
-    @Value("${deploy.env}")
-    private String deployEnv;
 
     @PostMapping("/signup")
     public ApiResponse<String> signup(@RequestBody SignupRequestDTO request) {
@@ -33,7 +29,7 @@ public class AuthController {
         AuthResponseDTO authResponseDTO = authService.login(request);
         Cookie cookie = new Cookie("refresh_token", authResponseDTO.getRefreshToken());
         cookie.setHttpOnly(true);
-        cookie.setSecure("production".equals(deployEnv));
+        cookie.setSecure("production".equals("prod"));
         response.addCookie(cookie);
         return new ApiResponse<>(authResponseDTO);
     }

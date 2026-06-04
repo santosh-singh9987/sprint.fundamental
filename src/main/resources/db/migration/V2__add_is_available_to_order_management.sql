@@ -1,0 +1,2 @@
+ALTER TABLE order_management
+ADD COLUMN is_available BOOLEAN NOT NULL DEFAULT TRUE;
